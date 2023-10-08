@@ -1,6 +1,4 @@
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class Scene {
     private final String name;
@@ -18,6 +16,27 @@ public class Scene {
             actors.addAll(toAddC.getActors());
             for (Actor actor : actors) {
                 actor.addScene(this);
+            }
+        }
+    }
+    public void analyzeConflicts(HashMap<Actor, Character> running, Scene priorScene, ArrayList<Production.CostumeConflictHolder> conflicts) {
+        for (Character character : this.getCharacters()) {
+            for (Actor actor : character.getActors()) {
+                if (running.get(actor) == null) {
+                    running.put(actor, character);
+                } else if (!running.get(actor).equals(character)) {
+                    if (this.getCharacters().contains(running.get(actor))) {
+                        conflicts.add(new Production.CostumeConflictHolder(this, this, actor, character, running.get(actor)));
+                    } else {
+                        conflicts.add(new Production.CostumeConflictHolder(this, priorScene, actor, character, running.get(actor)));
+                    }
+                }
+            }
+        }
+        running.clear();
+        for (Character character : this.getCharacters()) {
+            for (Actor actor : character.getActors()) {
+                running.putIfAbsent(actor, character);
             }
         }
     }

@@ -113,14 +113,13 @@ public class Production {
         characters.get(character.hashCode()).printAllActors();
     }
     public void printActorsForRehearsal() {
-        boolean condition = true;
         HashSet<Actor> actorsToCall = new HashSet<>();
         Scanner input = new Scanner(System.in);
         ArrayList<Scene> scenes = new ArrayList<>();
         for (Act a : acts) {
             scenes.addAll(a.getScenes());
         }
-        while (condition) {
+        while (true) {
             for (int i = 0; i < scenes.size(); ++i) {
                 System.out.printf("%d:%s\n", i, scenes.get(i).getName());
             }
@@ -135,7 +134,6 @@ public class Production {
                 continue;
             }
             if (numInput == -1) {
-                condition = false;
                 break;
             }
             actorsToCall.addAll(scenes.get(numInput).getActors());
@@ -194,7 +192,7 @@ public class Production {
         for (Act a : acts) {
             scenes.addAll(a.getScenes());
         }
-        while (condition) {
+        while (true) {
             for (int i = 0; i < scenes.size(); ++i) {
                 System.out.printf("%d:%s\n", i, scenes.get(i).getName());
             }
@@ -208,7 +206,6 @@ public class Production {
                 continue;
             }
             if (numInput == -1) {
-                condition = false;
                 break;
             }
             scenesToWrite.add(scenes.get(numInput));
@@ -232,26 +229,8 @@ public class Production {
         Scene priorScene = null;
         for (Act act : acts) {
             for (Scene scene : act.getScenes()) {
-                for (Character character : scene.getCharacters()) {
-                    for (Actor actor : character.getActors()) {
-                        if (running.get(actor) == null) {
-                            running.put(actor, character);
-                        } else if (!running.get(actor).equals(character)) {
-                            if (scene.getCharacters().contains(running.get(actor))) {
-                                conflicts.add(new CostumeConflictHolder(scene, scene, actor, character, running.get(actor)));
-                            } else {
-                                conflicts.add(new CostumeConflictHolder(scene, priorScene, actor, character, running.get(actor)));
-                            }
-                        }
-                    }
-                }
-                running.clear();
+                scene.analyzeConflicts(running, priorScene, conflicts);
                 priorScene = scene;
-                for (Character character : scene.getCharacters()) {
-                    for (Actor actor : character.getActors()) {
-                        running.putIfAbsent(actor, character);
-                    }
-                }
             }
         }
         for (CostumeConflictHolder conflict : conflicts) {
@@ -267,14 +246,14 @@ public class Production {
             System.out.println("No costume conflicts found!");
         }
     }
-    private class CostumeConflictHolder {
+    static class CostumeConflictHolder {
         private final Scene scene;
         private final Actor actor;
         private final Character newCharacter;
         private final Character priorCharacter;
         private final Scene priorScene;
 
-        private CostumeConflictHolder(Scene scene, Scene priorScene, Actor actor, Character newCharacter, Character priorCharacter) {
+         CostumeConflictHolder(Scene scene, Scene priorScene, Actor actor, Character newCharacter, Character priorCharacter) {
             this.scene = scene;
             this.priorScene = priorScene;
             this.actor = actor;
