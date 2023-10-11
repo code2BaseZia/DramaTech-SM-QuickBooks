@@ -7,7 +7,7 @@ public class Driver {
     public static void main(String[] args) {
 
         try {
-            Production production = new Production(new File("characterActorFile"), new File("sceneFile"));
+            Production production = new Production(new File("Full Cast List - Sheet1.csv"), new File("sceneFile"));
             System.out.println("Welcome to SM QuickBooks! Note that all inputs are Case Sensitive! For a menu of available commands, please enter 0.");
             boolean condition = true;
             while (condition) {

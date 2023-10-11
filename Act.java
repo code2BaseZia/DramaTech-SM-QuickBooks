@@ -10,7 +10,7 @@ public class Act {
 
     private void populateScenes(ArrayList<String> sceneList, Production prod) {
         for (int i = 0; i < sceneList.size();) {
-            String[] inputs = sceneList.remove(i).split(", ");
+            String[] inputs = sceneList.remove(i).split(",");
 
             if (inputs[0].equals("$#@$")) {
                 return;

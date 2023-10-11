@@ -9,7 +9,7 @@ public class Scene {
     private final HashSet<Character> characters = new HashSet<>();
     private final HashSet<Actor> actors = new HashSet<>();
     public Scene(String[] inputs, Production prod) {
-        this.name = inputs[0]; // redo below code
+        this.name = inputs[0];
         for (int i = 1; i < inputs.length; ++i) {
             Character toAddC = prod.characters.get(new Character(inputs[i]).hashCode());
             if (toAddC == null) {

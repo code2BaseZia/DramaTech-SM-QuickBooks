@@ -8,7 +8,7 @@ import java.io.File;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 
-// TODO: Take in downloaded CSVs instead of notepads!!
+
 public class Production {
     private final ArrayList<Act> acts = new ArrayList<>();
     final HashMap<Character, Actor> characterActorHashMap = new HashMap<>();
@@ -37,7 +37,7 @@ public class Production {
         Scanner input = new Scanner(file);
         while (input.hasNextLine()) {
             String inputStr = input.nextLine();
-            String[] inputs = inputStr.split(", ");
+            String[] inputs = inputStr.split(",");
             Actor toAddA = new Actor(inputs[1]);
             Character toAddC = new Character(inputs[0]);
             if (actors.get(toAddA.hashCode()) != null) {
@@ -60,7 +60,7 @@ public class Production {
         Scanner input = new Scanner(file);
         while (input.hasNextLine()) {
             String inputStr = input.nextLine();
-            String[] inputs = inputStr.split(", ");
+            String[] inputs = inputStr.split(",");
             Actor compareA = new Actor(inputs[1]);
             Character compareC = new Character(inputs[0]);
             characterActorHashMap.put(characters.get(compareC.hashCode()),actors.get(compareA.hashCode()));
@@ -154,8 +154,8 @@ public class Production {
 
     public void outputAllScenesActors() {
         try {
-            new File("All Scenes Actors Only Output").createNewFile();
-            BufferedWriter writer = new BufferedWriter(new FileWriter("All Scenes Actors Only Output"));
+            new File("All Scenes Actors Only Output.txt").createNewFile();
+            BufferedWriter writer = new BufferedWriter(new FileWriter("All Scenes Actors Only Output.txt"));
             for (Act act : acts) {
                 for (Scene scene : act.getScenes()) {
                     writer.write(scene.toStringActorsOnly());
@@ -170,8 +170,8 @@ public class Production {
     }
     public void outputAllScenes() {
         try {
-            new File("All Scenes Output").createNewFile();
-            BufferedWriter writer = new BufferedWriter(new FileWriter("All Scenes Output"));
+            new File("All Scenes Output.txt").createNewFile();
+            BufferedWriter writer = new BufferedWriter(new FileWriter("All Scenes Output.txt"));
             for (Act act : acts) {
                 for (Scene scene : act.getScenes()) {
                     writer.write(scene.toString());
@@ -211,8 +211,8 @@ public class Production {
             scenesToWrite.add(scenes.get(numInput));
         }
         try {
-            new File("Specific Scene Output").createNewFile();
-            BufferedWriter writer = new BufferedWriter(new FileWriter("Specific Scene Output"));
+            new File("Specific Scene Output.txt").createNewFile();
+            BufferedWriter writer = new BufferedWriter(new FileWriter("Specific Scene Output.txt"));
             for (Scene scene : scenesToWrite) {
                 writer.write(scene.toString());
                 writer.newLine();
