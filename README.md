@@ -4,7 +4,7 @@ Welcome to the DramaTech SM QuickBooks! By utilizing this service you agree that
 The DramaTech SM QuickBooks allow stage managers and their assistants to quickly gather information about a production with minimal effort! Once the necessary inputs have been created, the program can be used to supplement SM activites such as: Finding all the actors for a character, highlighting possbile costume change conflicts, and many more features!
 
 ## Installation
-In order to install and DramaTech SM QuickBooks, be sure to download all .java files and place them within a common directory.
+In order to install and use DramaTech SM QuickBooks, be sure to download all .java files and place them within a common directory.
 ## Formatting Inputs
 ### Character Actor File
 It is paramount that inputs be formatted correctly. The assumed format for the character actor file is a spreadsheet with NO HEADERS. Note that if you include headers, you can simply delete that line from the resulting CSV to use it as input. The first cell of the spreadsheet should be the name of the character exactly as you will write their name for each scene, with their actor in the same row in the next column. With a spreadsheet formatted properly, download a CSV version of the spreadsheet. Below is an example of a correctly formatted and downloaded CSV.
