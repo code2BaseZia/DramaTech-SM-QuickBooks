@@ -24,6 +24,8 @@ etc,etc,
 ```
 Note that if a scene contains a character which does not exist in the character actor file it will throw an error when you attempt to run the program telling you the character that it could not find in the character actor input file.
 
+Within the scene file, once you reach the end of an act, create a new line and put only `$#@$` on it, as this will indicate to the program that an act has ended and a new act begins from that point on.
+
 ### Naming Your Input Files
 The default names for the passed in inputs are characterActor.csv and scenes.csv respectively. Renaming your CSVs and moving them to the same directory/folder should allow the program to run with no issues. If you do not wish to rename your CSVs for whatever reason, simply change the input files' names in the constructor for Production in the Driver class on line 10.
 
