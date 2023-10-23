@@ -1,6 +1,8 @@
 # DramaTech-SM-QuickBooks
 Welcome to the DramaTech SM QuickBooks! By utilizing this service you agree that you will properly format inputs! 
 
+**NOTE: This README and the following is a work and progress and will be completed sometime in the near future!**
+
 The DramaTech SM QuickBooks allow stage managers and their assistants to quickly gather information about a production with minimal effort! Once the necessary inputs have been created, the program can be used to supplement SM activites such as: Finding all the actors for a character, highlighting possbile costume change conflicts, and many more features!
 
 ## Installation
