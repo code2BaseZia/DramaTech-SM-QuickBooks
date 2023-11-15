@@ -40,3 +40,25 @@ If you have an IDE you can simply run the driver program using your IDE. If not,
 Open a new terminal window. On both Windows and Mac, use `cd "directory/path/here"` to navigate to the correct folder and drive that the files are all stored in. To get the directory path you can navigate to the folder in File Explorer and right click the folder to copy its path. Once you've navigated to the correct folder in your terminal, begin by typing `javac *.java` this will compile all the java files. Next, simply type `java Driver` and the program should run!
 
 ## Using the Program
+After downloading the program, you must run it using one of the above methods. All interfacing with the program is done through the terminal, whether it be the IDE integrated one, or physical cmd window. Make sure that your scene file and actor file are named properly and are located in the same folder as the program.
+### Main Menu
+The main menu lists all available commands in the current version, currently there are 12 different options of commands available in the program.
+| Integer to Enter | Description |
+| --- | ----------- |
+| 0 |Shows menu of available commands|
+| 1 |Prints all entered scenes|
+| 2 |Prints all scenes in the specified act|
+| 3 |Prints all scenes the specified actor is in|
+| 4 |Prints all scenes the specified character is in|
+| 5 |Prints all characters played by the specified actor|
+| 6 |Prints all actors who play the specified character|
+| 7 |Prints all actors to call to the specified rehearsal|
+| 8 |Prints the information of the specified scene|
+| 9 |Outputs a plain-text file with all specified scenes|
+| 10 |Outputs a plain-text file with all scenes and only the actors in those scenes|
+| 11 |Outputs a plain-text file with the same information as printing all scenes|
+| 12 |Prints possible costume conflicts|
+| -1 |Exits/terminates the program|
+
+### Miscellaneous
+Thank you for using this program. As we are still in the beta testing phase, if you have any problems please reach out. If possible, bring me suggestions and things you like and dislike about using the program so it can be improved for future builds and SMs. Thank you for using the DramaTech SM Quickbooks! Break legs!
