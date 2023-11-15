@@ -60,5 +60,5 @@ The main menu lists all available commands in the current version, currently the
 | 12 |Prints possible costume conflicts|
 | -1 |Exits/terminates the program|
 
-### Miscellaneous
+## Thanks
 Thank you for using this program. As we are still in the beta testing phase, if you have any problems please reach out. If possible, bring me suggestions and things you like and dislike about using the program so it can be improved for future builds and SMs. Thank you for using the DramaTech SM Quickbooks! Break legs!
